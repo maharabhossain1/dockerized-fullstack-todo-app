@@ -28,7 +28,7 @@ const TodoForm = ({ setReload }: TodoFormProps) => {
 
   async function onSubmit(values: TodoSchemaType) {
     try {
-      const res = await fetch(`http://127.0.0.1:8000/api/todos/`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/todos/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
