@@ -26,6 +26,9 @@ COPY . .
 # Uncomment the following line to disable telemetry at build time
 # ENV NEXT_TELEMETRY_DISABLED 1
 
+ARG NEXT_PUBLIC_API_URL
+ENV NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL}
+
 # Build Next.js based on the preferred package manager
 RUN \
   if [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm run build; \

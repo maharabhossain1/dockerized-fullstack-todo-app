@@ -11,7 +11,7 @@ export default function Home() {
     const getData = async () => {
       setLoading(true);
       try {
-        const res = await fetch(`http://127.0.0.1:8000/api/todos/`);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/todos/`);
         const data = await res.json();
         setData(data);
       } finally {
